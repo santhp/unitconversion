@@ -1,16 +1,24 @@
 package com.tw.test;
 
 public class UnitConversion {
-    public static Measurement convertToInch(Measurement measurement) {
-        Measurement converted = measurement;
-        /*if(measurement.type.equals("foot")){
-            converted =  new Measurement(12 * measurement.value,"inch");
-        } else if(measurement.type.equals("yard")) {
-            converted = new Measurement(36 * measurement.value, "inch");
-        } else if (measurement.type.equals("cm")){
-            converted = new Measurement(0.393701f * measurement.value,"inch");
-        }*/
-        return measurement;
+    enum ConversionRatesToInchForLength {
+        mm(0.0393701f), cm(0.393701f), inch(1), foot(12), yard(36);
+
+        float conversionRate;
+
+        ConversionRatesToInchForLength(float conversionRate) {
+            this.conversionRate = conversionRate;
+        }
     }
+
+    public static Measurement convertToInch(Measurement measurement) {
+        return new Measurement(measurement.value * ConversionRatesToInchForLength.valueOf(measurement.type).conversionRate, "inch");
+    }
+
+    public static boolean checkIfMeasurementIsEqual(Measurement measurement1, Measurement measurement2) {
+
+        return convertToInch(measurement1).equals(convertToInch(measurement1));
+    }
+
 
 }
