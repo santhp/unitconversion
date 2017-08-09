@@ -1,5 +1,8 @@
-package com.tw.test;
+package com.tw.com.tw.tdd;
 
+import com.tw.tdd.Measurement;
+import com.tw.tdd.MeasurementArithmetics;
+import junit.framework.TestCase;
 import org.junit.Test;
 
 import static junit.framework.TestCase.assertEquals;
@@ -9,7 +12,7 @@ public class MeasurementArithmeticsTest {
 
     @Test
     public void shouldAddSameMeasurementUnit() {
-        assertEquals(new Measurement(12, "inch"), MeasurementArithmetics.addMeasurements(new Measurement(6, "inch"), new Measurement(6, "inch")));
+        TestCase.assertEquals(new Measurement(12, "inch"), MeasurementArithmetics.addMeasurements(new Measurement(6, "inch"), new Measurement(6, "inch")));
         assertEquals(new Measurement(24, "inch"), MeasurementArithmetics.addMeasurements(new Measurement(20, "inch"), new Measurement(4, "inch")));
         assertEquals(new Measurement(1.9996073f, "inch"), MeasurementArithmetics.addMeasurements(new Measurement(2.579f, "cm"), new Measurement(2.5f, "cm")));
 

@@ -1,4 +1,6 @@
-package com.tw.test;
+package com.tw.tdd;
+
+import com.tw.tdd.Measurement;
 
 public class UnitConversion {
     enum ConversionRatesToInchForLength {

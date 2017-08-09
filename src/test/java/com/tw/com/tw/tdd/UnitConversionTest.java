@@ -1,5 +1,8 @@
-package com.tw.test;
+package com.tw.com.tw.tdd;
 
+import com.tw.tdd.Measurement;
+import com.tw.tdd.UnitConversion;
+import junit.framework.TestCase;
 import org.junit.Test;
 
 import static junit.framework.TestCase.assertEquals;
@@ -9,7 +12,7 @@ public class UnitConversionTest {
     @Test
     public void shouldConvertInchToInch() {
 
-        assertEquals(new Measurement(1, "inch"), UnitConversion.convertToInch(new Measurement(1, "inch")));
+        TestCase.assertEquals(new Measurement(1, "inch"), UnitConversion.convertToInch(new Measurement(1, "inch")));
 
     }
 

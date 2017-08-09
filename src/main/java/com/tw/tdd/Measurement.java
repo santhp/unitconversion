@@ -1,4 +1,4 @@
-package com.tw.test;
+package com.tw.tdd;
 
 public class Measurement {
     float value;
